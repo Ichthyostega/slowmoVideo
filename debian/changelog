@@ -1,3 +1,12 @@
+slowmovideo (0.5+1709.1git32b190-1~stretch) stretch-backports; urgency=low
+
+  * Incremental development snapshot.
+  * Includes all upstream fixes from 2016 and 2017
+  * bump standards to 4.0.1 (debhelper 10)
+  * provide a FreeDesktop launcher instead of a menu file
+
+ -- Hermann Vosseler <deb@ichthyostega.de>  Sat, 26 May 2018 02:42:31 +0200
+
 slowmovideo (0.5-2ppa1~xenial) xenial; urgency=medium
 
   * Rebuild for Ubuntu/Xenial (16.04 LTS)
