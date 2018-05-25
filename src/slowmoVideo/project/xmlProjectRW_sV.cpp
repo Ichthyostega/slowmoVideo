@@ -276,7 +276,7 @@ void XmlProjectRW_sV::loadFrameSource(QXmlStreamReader *reader, Project_sV *proj
 {
 	//qDebug() << "loadFrameSource";
     QStringRef frameSourceType = reader->attributes().value("type");
-    if (frameSourceType.compare("videoFile") == 0) {
+    if (frameSourceType.compare(QLatin1String("videoFile")) == 0) {
         while (reader->readNextStartElement()) {
             if (reader->name() == "inputFile") {
                 VideoFrameSource_sV *frameSource = new VideoFrameSource_sV(project, reader->readElementText());
@@ -287,7 +287,7 @@ void XmlProjectRW_sV::loadFrameSource(QXmlStreamReader *reader, Project_sV *proj
             }
         }
 
-    } else if (frameSourceType.compare("images") == 0) {
+    } else if (frameSourceType.compare(QLatin1String("images")) == 0) {
         while (reader->readNextStartElement()) {
             if (reader->name() == "inputFiles") {
 
@@ -303,7 +303,7 @@ void XmlProjectRW_sV::loadFrameSource(QXmlStreamReader *reader, Project_sV *proj
                 project->loadFrameSource(frameSource);
             }
         }
-    } else if (frameSourceType.compare("empty") == 0) {
+    } else if (frameSourceType.compare(QLatin1String("empty")) == 0) {
         EmptyFrameSource_sV *frameSource = new EmptyFrameSource_sV(project);
         project->loadFrameSource(frameSource);
         reader->skipCurrentElement();
@@ -524,7 +524,10 @@ Project_sV* XmlProjectRW_sV::loadProject(QString filename, QString *warning) thr
                                 pr->imagesFilenamePattern() = xml.attributes().value("pattern").toString();
                                 xml.skipCurrentElement();
                             } else if (xml.name() == "videoFilename") {
-                                pr->videoFilename() = xml.attributes().value("file").toString();
+                                QString filename = xml.attributes().value("file").toString();
+                                if (!filename.isEmpty()) {
+                                    pr->videoFilename() = filename;
+                                }
                                 xml.skipCurrentElement();
                             } else if (xml.name() == "videoCodec") {
                                 pr->videoCodec() = xml.attributes().value("codec").toString();
