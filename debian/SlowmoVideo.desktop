@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.2
+Exec=slowmoUI
+TryExec=slowmoUI
+Icon=SlowmoVideo
+Type=Application
+Terminal=false
+Name=SlowmoVideo
+Categories=Video
+Comment=Create slow-motion videos from your footage. You can smoothly slow down and speed up your footage, optionally with motion blur. SlowmoVideo tries to find out where pixels move in the video (this information is called Optical Flow), and then uses this information to calculate the additional frames between the ones recorded in the imput video.
+

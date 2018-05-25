@@ -1,0 +1,52 @@
+From: Ichthyostega <prg@ichthyostega.de>
+Date: Sat, 26 May 2018 01:24:04 +0200
+Subject: install desktop file from Debian packaging
+
+...instead of populating the *.desktop file contents from within the Makefile,
+rather install the desktop file as shipped within the debian directory.
+
+Moreover, rename the application icon to SlowmoVideo.png
+---
+ src/slowmoVideo/slowmoUI/CMakeLists.txt | 29 +++++++++--------------------
+ 1 file changed, 9 insertions(+), 20 deletions(-)
+
+diff --git a/src/slowmoVideo/slowmoUI/CMakeLists.txt b/src/slowmoVideo/slowmoUI/CMakeLists.txt
+index 19f4271..23ea16c 100644
+--- a/src/slowmoVideo/slowmoUI/CMakeLists.txt
++++ b/src/slowmoVideo/slowmoUI/CMakeLists.txt
+@@ -153,26 +153,15 @@ target_link_libraries(slowmoUI sVproj sVvis sVgui ${OSX_EXTRA_LIBS})
+ #        RUNTIME DESTINATION ${BIN_INSTALL_DIR} COMPONENT Runtime)
+ 
+ if (UNIX AND NOT APPLE)
+-# create desktop file for KDE/Gnome
+-# desktop file section
+-	file( WRITE "${PROJECT_BINARY_DIR}/slowmoUI.desktop"
+-"#!/usr/bin/env xdg-open
+-[Desktop Entry]
+-Type=Application
+-Comment=Slow Motion Video
+-Exec=${CMAKE_INSTALL_PREFIX}/bin/slowmoUI
+-GenericName=slowmoVideo
+-Icon=${CMAKE_INSTALL_PREFIX}/share/icons/AppIcon.png
+-MimeType=
+-Name=slowmoUI
+-Terminal=false
+-Categories=Qt;AudioVideo;Video;\n")
+-
+-	#install ( FILES icons/slowmoUI.png DESTINATION share/icons )
+-	install ( FILES res/AppIcon.png DESTINATION share/icons )
+-	install ( FILES ${PROJECT_BINARY_DIR}/slowmoUI.desktop DESTINATION share/applications
+-		PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+-)
++# install a FreeDesktop application launcher and menu file
++	install ( FILES res/AppIcon.png
++		DESTINATION share/icons
++		RENAME SlowmoVideo.png
++	)
++	install ( FILES ${PROJECT_SOURCE_DIR}/../debian/SlowmoVideo.desktop
++		DESTINATION share/applications
++		PERMISSIONS OWNER_READ OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
++	)
+ endif()
+ 
+ if (Qt5Core_FOUND)
