@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Valery Brasseur <vbrasseur@gmail.com>
 Uploaders: Benoit Rousselle <brousselle@gmail.com>, Hermann Vosseler <deb@ichthyostega.de>
 Changed-By: Hermann Vosseler <deb@ichthyostega.de>
-Build-Depends: debhelper (>= 9),
+Build-Depends: debhelper (>= 10),
                cmake,
                libavformat-dev,
                libopencv-dev,
@@ -12,7 +12,7 @@ Build-Depends: debhelper (>= 9),
                qtscript5-dev,
                freeglut3-dev,
                libglew1.6-dev
-Standards-Version: 3.9.6
+Standards-Version: 4.0.1
 Homepage: http://slowmovideo.granjow.net
 Vcs-Git: https://github.com/slowmoVideo/slowmoVideo.git
 Vcs-Browser: https://github.com/slowmoVideo/slowmoVideo/tree/debian
@@ -21,7 +21,7 @@ Package: slowmovideo
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: slow-motion videos from your footage
- slowmoVideo creates smooth slow-motion videos from your footage.
+ SlowmoVideo creates smooth slow-motion videos from your footage.
  But it does not simply make your videos play at 0.01× speed.
  You can smoothly slow down and speed up your footage,
  optionally with motion blur. SlowmoVideo tries to find out
@@ -29,7 +29,7 @@ Description: slow-motion videos from your footage
  and then uses this information to calculate additional frames
  between the ones recorded by your camera.
  .
- slowmoVideo provides a Qt UI to define the parameters of the
+ SlowmoVideo provides a Qt UI to define the parameters of the
  slow-motion to be calculated, most notably it allows to edit
  the change of speed as time proceeds through bézier curves.
 
