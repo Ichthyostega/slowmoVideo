@@ -1,3 +1,9 @@
+slowmovideo (0.5+1709.1git32b190-1ppa1~bionic1) bionic; urgency=low
+
+  * Rebuild for Ubuntu/Bionic (18.04 LTS)
+
+ -- Hermann Vosseler <deb@ichthyostega.de>  Sat, 26 May 2018 03:13:08 +0200
+
 slowmovideo (0.5+1709.1git32b190-1~stretch) stretch-backports; urgency=low
 
   * Incremental development snapshot.
