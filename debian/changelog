@@ -1,0 +1,5 @@
+slowmovideo (0.5+git20190116-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #717369)
+
+ -- Gürkan Myczko <gurkan@phys.ethz.ch>  Wed, 16 Jan 2019 09:02:04 +0100
