@@ -8,3 +8,10 @@ GPU-KLT+FLOW library, and usually produces evidently better results.
 
  -- vbr <vbrasseur@gmail.com>  Mon, 07 Jul 2014 05:32:32 -0700
 
+Upstream development of Slowmovideo is basically stalled since several
+years; this package for Debian adds some minor adjustments to build
+against OpenCV 4.x, which is standard since Debian-Bullseye
+
+ -- Hermann Vosseler <deb@ichthyostega.de>  Sun, 12 Jan 2020 01:01:16 +0100
+
+

@@ -1,33 +1,38 @@
 Source: slowmovideo
 Section: video
-Priority: extra
-Maintainer: Valery Brasseur <vbrasseur@gmail.com>
-Uploaders: Benoit Rousselle <brousselle@gmail.com>, Hermann Vosseler <deb@ichthyostega.de>
+Priority: optional
+Maintainer: Gürkan Myczko <gurkan@phys.ethz.ch>
 Changed-By: Hermann Vosseler <deb@ichthyostega.de>
-Build-Depends: debhelper (>= 10),
-               cmake,
-               libavformat-dev,
-               libopencv-dev,
-               qtbase5-dev,
-               qtscript5-dev,
-               freeglut3-dev,
-               libglew1.6-dev
-Standards-Version: 4.0.1
-Homepage: http://slowmovideo.granjow.net
+Build-Depends: debhelper (>= 11),
+	cmake,
+	qtbase5-dev,
+	qtscript5-dev,
+	libavformat-dev,
+	libopencv-dev (>= 4),
+	freeglut3-dev,
+	libglew-dev | libglew1.6-dev
+Standards-Version: 4.4.1
+Homepage: http://slowmovideo.granjow.net/
 Vcs-Git: https://github.com/slowmoVideo/slowmoVideo.git
 Vcs-Browser: https://github.com/slowmoVideo/slowmoVideo/tree/debian
 
 Package: slowmovideo
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: slow-motion videos from your footage
+Depends: ${shlibs:Depends}, ${misc:Depends}, ffmpeg
+Description: create slow-motion videos from your footage
  SlowmoVideo creates smooth slow-motion videos from your footage.
- But it does not simply make your videos play at 0.01× speed.
- You can smoothly slow down and speed up your footage,
- optionally with motion blur. SlowmoVideo tries to find out
- where pixels move in the video (known as the Optical Flow),
- and then uses this information to calculate additional frames
- between the ones recorded by your camera.
+ But it does not simply make your videos play at 0.01 x speed. You can
+ smoothly slow down and speed up your footage, optionally with motion
+ blur. SlowmoVideo tries to find out where pixels move in the video
+ (this information is called Optical Flow), and then uses this
+ information to calculate the additional frames.
+ .
+ Videos in any format supported by ffmpeg can be loaded. Image sequences
+ can also be loaded, so, if you did a timelapse with too few frames,
+ slowmoVideo may help as well.
+ slowmoVideo does not work with a constant slowdown factor but with
+ curves that allow arbitrary time accelereation/deceleration/reversal.
+ Motion blur can be added, as much as you want.
  .
  SlowmoVideo provides a Qt UI to define the parameters of the
  slow-motion to be calculated, most notably it allows to edit

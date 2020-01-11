@@ -1,0 +1,6 @@
+slowmovideo: binary-without-manpage usr/bin/slowmoFlowBuilder
+slowmovideo: binary-without-manpage usr/bin/slowmoFlowEdit
+slowmovideo: binary-without-manpage usr/bin/slowmoInterpolate
+slowmovideo: binary-without-manpage usr/bin/slowmoRenderer
+slowmovideo: binary-without-manpage usr/bin/slowmoVideoInfo
+slowmovideo: binary-without-manpage usr/bin/slowmoVisualizeFlow

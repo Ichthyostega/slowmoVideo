@@ -1,11 +1,18 @@
 #!/usr/bin/make -f
-# -*- makefile -*-
+#export DH_VERBOSE = 1
 
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
+# see FEATURE AREAS in dpkg-buildflags(1)
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
-export DH_OPTIONS
-
+# see ENVIRONMENT in dpkg-buildflags(1)
+# package maintainers to append CFLAGS
+export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+# package maintainers to append LDFLAGS
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 %:
-	dh "$@" -Dsrc --buildsystem=cmake
+	dh $@ -Dsrc
+
+override_dh_fixperms:
+	dh_fixperms
+

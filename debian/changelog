@@ -1,3 +1,23 @@
+slowmovideo (0.5+git20190116-3) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Bump standards version to 4.4.1.
+
+ -- Gürkan Myczko <gurkan@phys.ethz.ch>  Mon, 28 Oct 2019 14:02:42 +0100
+
+slowmovideo (0.5+git20190116-2) experimental; urgency=medium
+
+  * Apply patch for opencv4 to fix FTBFS. (Closes: #922598)
+  * Bump standards version to 4.4.0.
+
+ -- Gürkan Myczko <gurkan@phys.ethz.ch>  Fri, 06 Sep 2019 11:08:02 +0200
+
+slowmovideo (0.5+git20190116-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #717369)
+
+ -- Gürkan Myczko <gurkan@phys.ethz.ch>  Wed, 16 Jan 2019 09:02:04 +0100
+
 slowmovideo (0.5+1709.1git32b190-1ppa1~bionic1) bionic; urgency=low
 
   * Rebuild for Ubuntu/Bionic (18.04 LTS)
