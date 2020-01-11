@@ -2,8 +2,8 @@ Source: slowmovideo
 Section: video
 Priority: optional
 Maintainer: Gürkan Myczko <gurkan@phys.ethz.ch>
-Build-Depends: debhelper (>= 11), cmake, qtbase5-dev, qtscript5-dev, libopencv-dev
-Standards-Version: 4.2.1
+Build-Depends: debhelper (>= 11), cmake, qtbase5-dev, qtscript5-dev, libopencv-dev (>= 4)
+Standards-Version: 4.4.1
 Homepage: http://slowmovideo.granjow.net/
 
 Package: slowmovideo
