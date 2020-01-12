@@ -1,3 +1,11 @@
+slowmovideo (0.5+git20190116-3+flowBuilder.bullseye) UNRELEASED; urgency=low
+
+  * Ensure the Flow-Builder (GPU support) is enabled.
+  * to make this happen, need additionally freeglut-3 and libglew-dev
+  * inofficial custom package by Ichthyostega
+
+ -- Hermann Vosseler <deb@ichthyostega.de>  Sun, 12 Jan 2020 01:45:07 +0100
+
 slowmovideo (0.5+git20190116-3) unstable; urgency=medium
 
   * Upload to unstable.
