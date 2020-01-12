@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 11),
 	qtbase5-dev,
 	qtscript5-dev,
 	libavformat-dev,
-	libopencv-dev (>= 4),
+	libopencv-dev,
 	freeglut3-dev,
 	libglew-dev | libglew1.6-dev
 Standards-Version: 4.4.1
